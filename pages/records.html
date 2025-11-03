@@ -37,8 +37,8 @@
 
         <main>
             <!-- Records -->
-            <section class="records">
-                <div class="records__inner-container content-container">
+            <section class="records js-records-component">
+                <div class="records__inner-container js-records-inner-container content-container">
 
                     <!-- Heading -->
                     <div class="records__heading">
@@ -53,6 +53,34 @@
                         </button>
                     </div>
 
+                    <!-- Records filters -->
+                    <form class="records__filters-form">
+                        <input type="text" class="records__filters-input js-game-name-input" placeholder="Game Name">
+                        <select name="records sort select" id="records-sort-select"
+                            class="records__filters-select js-sort-filter">
+                            <option value="most-played">Most Played</option>
+                            <option value="least-played">Least Played</option>
+                            <option value="name">Name</option>
+                        </select>
+                        <button class="records__filters-submit-btn js-filter-submit-btn"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg></button>
+                    </form>
+
+                    <!-- Records Table -->
+                    <table class="records__table">
+                        <thead>
+                            <tr>
+                                <th>Game Name</th>
+                                <th>Plays</th>
+                                <th>Controls</th>
+                            </tr>
+                        </thead>
+                        <tbody class="js-records-table"></tbody>
+                    </table>
 
                 </div>
             </section>

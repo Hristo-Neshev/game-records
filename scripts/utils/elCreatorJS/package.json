@@ -1,0 +1,12 @@
+{
+  "name": "el-creator",
+  "version": "1.0.0",
+  "description": "Creating different dynamic html templates",
+  "main": "el-creator.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hristo Neshev",
+  "license": "ISC"
+}
