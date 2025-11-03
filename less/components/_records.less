@@ -40,6 +40,7 @@
         align-items: center;
         gap: 20px;
         margin-top: 30px;
+        flex-wrap: wrap;
     }
 
     &__filters-input {
@@ -74,6 +75,23 @@
 
         &:hover {
             background-color: darken(@color-green, 8%);
+        }
+    }
+
+    &__clear-data-btn {
+        color: @color-white;
+        background-color: @color-red;
+        cursor: pointer;
+        display: flex;
+        border: none;
+        outline-color: transparent;
+        padding: 10px 20px;
+        border-radius: 10px;
+        transition: all .3s ease;
+        margin-left: auto;
+
+        &:hover {
+            background-color: darken(@color-red, 8%);
         }
     }
 
@@ -154,6 +172,7 @@
         outline-color: transparent;
         cursor: pointer;
         border-radius: 10px;
+        transition: all .3s ease;
 
         svg {
             width: 60%;
@@ -173,7 +192,6 @@
 
             &:hover {
                 background-color: darken(@color-red, 8%);
-                ;
             }
         }
     }
@@ -197,6 +215,21 @@
             height: 30px;
         }
 
+        &__filters-form {
+            margin: 30px auto 0 auto;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        &__filters-select,
+        &__filters-input {
+            width: 45%;
+        }
+
+        &__clear-data-btn {
+            margin-left: unset;
+        }
+
         &__table {
 
             th,
@@ -208,21 +241,6 @@
             thead th {
                 font-size: 12px;
             }
-        }
-    }
-}
-
-@media screen and (max-width: @breakpoint-phone) {
-    .records {
-        &__filters-form {
-            margin: 0 auto;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        &__filters-select,
-        &__filters-input {
-            width: 45%;
         }
     }
 }
