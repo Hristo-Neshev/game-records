@@ -13,7 +13,7 @@ export default function renderRecords(recordsData) {
         if (notFoundMsgEl) {
             notFoundMsgEl.remove();
         }
-
+        tableBodyEl.innerHTML = "";
         recordsData.forEach(function (rowData) {
             const rowEl = elCreator("recordsTableRow", rowData);
             appendElement(rowEl, tableBodyEl);

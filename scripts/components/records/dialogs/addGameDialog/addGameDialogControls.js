@@ -1,8 +1,11 @@
 import toggleDialogElement from "../../../../utils/toggleDialog.js";
 import addGameFormValidation from "./addGameFormValdiation.js";
+import { addData, getAllData } from "../../../../services/gamesData/gamesData.js";
+import renderRecords from "../../renderRecords.js";
+import { showSuccess, showError } from "../../../../services/notifications/notificationEvents.js";
 
 const addGameForm = document.querySelector(".js-add-game-form");
-const gameNameInputEl = document.querySelector(".js-add-game-form .js-game-name-input");
+const gameNameInputEl = document.querySelector(".js-add-game-form .js-add-game-name-input");
 const initialGamePLaysInputEl = document.querySelector(".js-initial-plays-input");
 
 
@@ -20,8 +23,25 @@ export function addGameSubmitHandler(addGameDialogEl) {
     } else {
         gameNameInputEl.removeEventListener("keyup", (event) => { addGameFormValidation(gameNameInputEl, initialGamePLaysInputEl); });
         initialGamePLaysInputEl.removeEventListener("keyup", (event) => { addGameFormValidation(gameNameInputEl, initialGamePLaysInputEl); });
-        closeAddGameDialog(addGameDialogEl);
-        console.log("save data");
+
+        const gameData = {
+            id: self.crypto.randomUUID(),
+            gameName: gameNameInputEl.value.trim(),
+            playsCount: Number(initialGamePLaysInputEl.value),
+        }
+
+        try {
+            const updatedData = addData(gameData);
+            renderRecords(updatedData);
+            closeAddGameDialog(addGameDialogEl);
+
+            // Show success notification
+            showSuccess(`Game "${gameData.gameName}" added successfully!`);
+        } catch (error) {
+            console.error(error);
+            // Show error notification
+            showError('Failed to add game. Please try again.');
+        }
     }
 }
 

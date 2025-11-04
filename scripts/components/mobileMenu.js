@@ -10,6 +10,5 @@ export default function initMobileMenu() {
             menuButtonEl.classList.add("open");
             mobileMenuEl.classList.add("open");
         }
-
     });
 };
