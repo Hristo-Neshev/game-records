@@ -6,6 +6,7 @@
     &__title {
         font-family: @font-open-sans--semi-bold;
         font-size: 24px;
+        text-align: center;
     }
 
     &__single-input-container {
@@ -14,12 +15,29 @@
         gap: 5px;
     }
 
+    &__single-input-container.invalid &__input {
+        border: 1px solid @color-red;
+    }
+
+    &__single-input-container.invalid &__validation-msg {
+        opacity: 1;
+    }
+
     &__input {
         padding: 10px 15px;
         font-family: @font-open-sans--regular;
         border: 1px solid rgba(@color-text-primary, 0.3);
         border-radius: 10px;
         outline-color: rgba(@color-text-primary, 0.3);
+        transition: border .3s ease;
+    }
+
+    &__validation-msg {
+        font-size: 12px;
+        margin-top: 5px;
+        color: @color-red;
+        opacity: 0;
+        transition: opacity .3s ease;
     }
 
     &__buttons-container {

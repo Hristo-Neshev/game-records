@@ -112,13 +112,15 @@
         <div class="add-game-dialog__inner-container">
             <form class="form js-add-game-form">
                 <h3 class="form__title">Add Game</h3>
-                <div class="form__single-input-container">
+                <div class="form__single-input-container js-single-input-container">
                     <input id="gameNameInput" type="text" class="form__input js-game-name-input"
                         placeholder="Game Name">
+                    <p class="form__validation-msg">The name must be at least 2 characters long</p>
                 </div>
-                <div class="form__single-input-container">
+                <div class="form__single-input-container js-single-input-container">
                     <input id="playesCountInput" type="number" class="form__input js-initial-plays-input"
                         placeholder="Initial Plays">
+                    <p class="form__validation-msg"> Initial plays must be bigger than 0</p>
                 </div>
             </form>
             <div class="form__buttons-container">

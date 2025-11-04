@@ -8,6 +8,6 @@ export default function initAddGameDialog() {
     const cancelDialogBtnEl = document.querySelector(".js-add-game-cancel-button");
 
     addGameButtonEl.addEventListener("click", (event) => { toggleDialogElement("open", addGameDialogEl) });
-    addGameSubmitBtnEl.addEventListener("click", addGameSubmitHandler);
+    addGameSubmitBtnEl.addEventListener("click", () => addGameSubmitHandler(addGameDialogEl));
     cancelDialogBtnEl.addEventListener("click", (event) => addGameCancel(addGameDialogEl));
 }
