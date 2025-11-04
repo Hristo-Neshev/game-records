@@ -1,10 +1,11 @@
-import { minLengthValidation, minNumberValidation } from "../../../../utils/formValidations.js";
+import { minLengthValidation, minNumberValidation, existingGameValidation } from "../../../../utils/formValidations.js";
 
 export default function addGameFormValidation(gameNameInputEl, initialGamePLaysInputEl) {
     let isValid = true;
 
     const formValidationStatus = {
-        gameName: minLengthValidation(gameNameInputEl, 2),
+        isGameNameValid: minLengthValidation(gameNameInputEl, 2),
+        gameNameTaken: existingGameValidation(gameNameInputEl),
         initialPlaysCount: minNumberValidation(initialGamePLaysInputEl, 1),
     }
 

@@ -1,4 +1,4 @@
-const LOCAL_STORAGE_KEY = "games-records-data";
+export const LOCAL_STORAGE_KEY = "games-records-data";
 
 export function getAllData() {
     const data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];

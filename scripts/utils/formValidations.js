@@ -1,4 +1,5 @@
 import showValidationError from "./showValidationError.js";
+import { LOCAL_STORAGE_KEY, getAllData } from "../services/gamesData/gamesData.js";
 
 export function minLengthValidation(inputEl, minLength) {
     let isValid;
@@ -22,6 +23,22 @@ export function minNumberValidation(inputEl, minNumber) {
         isValid = true;
     } else {
         isValid = false;
+    }
+
+    showValidationError(inputEl, isValid);
+    return isValid;
+}
+
+export function existingGameValidation(inputEl) {
+    let isValid = true;
+    const newName = inputEl.value.trim();
+
+    if (!newName) {
+        isValid = false;
+    } else {
+        const allGames = getAllData(LOCAL_STORAGE_KEY) || [];
+        const exists = allGames.some(g => (g.gameName || '').trim().toLowerCase() === newName.toLowerCase());
+        isValid = !exists;
     }
 
     showValidationError(inputEl, isValid);
