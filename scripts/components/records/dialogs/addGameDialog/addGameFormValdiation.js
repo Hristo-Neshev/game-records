@@ -6,7 +6,6 @@ export default function addGameFormValidation(gameNameInputEl, initialGamePLaysI
     const formValidationStatus = {
         isGameNameValid: minLengthValidation(gameNameInputEl, 2),
         gameNameTaken: existingGameValidation(gameNameInputEl),
-        initialPlaysCount: minNumberValidation(initialGamePLaysInputEl, 1),
     }
 
     Object.values(formValidationStatus).forEach((status) => {

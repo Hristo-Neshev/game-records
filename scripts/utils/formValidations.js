@@ -11,6 +11,10 @@ export function minLengthValidation(inputEl, minLength) {
         isValid = false;
     }
 
+    if (!existingGameValidation(inputEl)) {
+        isValid = false;
+    }
+
     showValidationError(inputEl, isValid);
     return isValid;
 }
@@ -40,7 +44,5 @@ export function existingGameValidation(inputEl) {
         const exists = allGames.some(g => (g.gameName || '').trim().toLowerCase() === newName.toLowerCase());
         isValid = !exists;
     }
-
-    showValidationError(inputEl, isValid);
     return isValid;
 }
