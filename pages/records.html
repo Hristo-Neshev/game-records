@@ -107,6 +107,27 @@
         </footer>
     </div>
 
+    <!-- Add Game Dialog -->
+    <dialog class="add-game-dialog js-add-game-dialog">
+        <div class="add-game-dialog__inner-container">
+            <form class="form js-add-game-form">
+                <h3 class="form__title">Add Game</h3>
+                <div class="form__single-input-container">
+                    <label for="gameNameInput" class="form__label">Game Name</label>
+                    <input id="gameNameInput" type="text" class="form__input js-game-name-input">
+                </div>
+                <div class="form__single-input-container">
+                    <label for="playesCountInput" class="form__label">Initial Plays</label>
+                    <input id="playesCountInput" type="number" class="form__input js-initial-plays-input">
+                </div>
+            </form>
+            <div class="form__buttons-container">
+                <button class="form__button form__button--submit js-add-game-submit-button">Add Game</button>
+                <button class="form__button form__button--cancel js-add-game-cancel-button">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+
 
     <!-- Mobile Menu -->
     <section class="mobile-menu js-mobile-menu">

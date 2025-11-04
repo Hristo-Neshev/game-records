@@ -1,5 +1,6 @@
 import renderTableRows from "./renderRecords.js";
 import initRecordsFilters from "./recordsFilters.js";
+import initAddGameDialog from "./dialogs/addGameDialog/addGameDialog.js";
 
 export let recordsData = []
 export default function initRecordsComponent() {
@@ -18,4 +19,5 @@ export default function initRecordsComponent() {
     ];
     renderTableRows(recordsData);
     initRecordsFilters();
+    initAddGameDialog();
 }

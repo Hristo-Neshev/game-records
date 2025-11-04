@@ -1,4 +1,4 @@
-import { elCreator, appendElement } from "../../utils/elCreatorJS/el-creator.js";
+import { elCreator, appendElement } from "../../services/elCreatorJS/el-creator.js";
 
 export default function renderRecords(recordsData) {
     const tableBodyEl = document.querySelector(".js-records-table");
