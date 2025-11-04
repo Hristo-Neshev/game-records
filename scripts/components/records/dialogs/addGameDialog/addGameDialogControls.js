@@ -2,7 +2,6 @@ import toggleDialogElement from "../../../../utils/toggleDialog.js";
 import addGameFormValidation from "./addGameFormValdiation.js";
 import { addData, getAllData } from "../../../../services/gamesData/gamesData.js";
 import renderRecords from "../../renderRecords.js";
-import { showSuccess, showError } from "../../../../services/notifications/notificationEvents.js";
 
 const addGameForm = document.querySelector(".js-add-game-form");
 const gameNameInputEl = document.querySelector(".js-add-game-form .js-add-game-name-input");
@@ -34,13 +33,8 @@ export function addGameSubmitHandler(addGameDialogEl) {
             const updatedData = addData(gameData);
             renderRecords(updatedData);
             closeAddGameDialog(addGameDialogEl);
-
-            // Show success notification
-            showSuccess(`Game "${gameData.gameName}" added successfully!`);
         } catch (error) {
             console.error(error);
-            // Show error notification
-            showError('Failed to add game. Please try again.');
         }
     }
 }
