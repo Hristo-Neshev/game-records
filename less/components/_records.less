@@ -129,6 +129,7 @@
         tbody {
             tr {
                 border-bottom: 1px solid rgba(@color-text-primary, 0.08);
+                transition: background-color .15s ease;
 
                 &:nth-child(even) {
                     background-color: rgba(@color-text-primary, 0.1);
@@ -136,6 +137,10 @@
 
                 &:last-child {
                     border-bottom: none;
+                }
+
+                &:hover {
+                    background-color: rgba(@color-text-primary, 0.14);
                 }
             }
         }
@@ -184,6 +189,14 @@
 
             &:hover {
                 background-color: darken(@color-green, 8%);
+            }
+        }
+
+        &--edit {
+            background-color: @color-blue;
+
+            &:hover {
+                background-color: darken(@color-blue, 8%);
             }
         }
 
