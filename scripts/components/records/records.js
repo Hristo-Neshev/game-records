@@ -1,8 +1,8 @@
 import renderTableRows from "./renderRecords.js";
 import initRecordsFilters from "./recordsFilters.js";
 import initAddGameDialog from "./dialogs/addGameDialog/addGameDialog.js";
-import initClearDataButton from "./clearRecords.js";
-import { getAllData } from "../../services/gamesData/gamesData.js";
+import initClearDataButton from "../records/clearRecords.js";
+import { getAllData } from "../../services/recordsGamesData/gamesData.js";
 
 export let recordsData = []
 export default function initRecordsComponent() {

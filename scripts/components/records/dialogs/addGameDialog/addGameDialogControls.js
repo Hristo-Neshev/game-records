@@ -1,6 +1,6 @@
 import toggleDialogElement from "../../../../utils/toggleDialog.js";
 import addGameFormValidation from "./addGameFormValdiation.js";
-import { addData, getAllData } from "../../../../services/gamesData/gamesData.js";
+import { addData, getAllData } from "../../../../services/recordsGamesData/gamesData.js";
 import renderRecords from "../../renderRecords.js";
 
 const addGameForm = document.querySelector(".js-add-game-form");

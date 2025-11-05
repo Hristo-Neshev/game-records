@@ -1,4 +1,4 @@
-import { clearAllData } from "../../services/gamesData/gamesData.js";
+import { clearAllData } from "../../services/recordsGamesData/gamesData.js";
 
 export default function initClearDataButton() {
     const clearDataButton = document.querySelector(".js-clear-data-btn");

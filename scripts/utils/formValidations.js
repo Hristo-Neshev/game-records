@@ -1,5 +1,5 @@
 import showValidationError from "./showValidationError.js";
-import { LOCAL_STORAGE_KEY, getAllData } from "../services/gamesData/gamesData.js";
+import { LOCAL_STORAGE_KEY, getAllData } from "../services/recordsGamesData/gamesData.js";
 
 export function minLengthValidation(inputEl, minLength) {
     let isValid;

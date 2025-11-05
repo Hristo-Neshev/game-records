@@ -2,7 +2,7 @@ export default function recordsTableRow(data) {
     const card = `
       <tr id="${data.id}" class="records__table-row js-records-table-row">
            <td class="records__cell">${data.gameName}</td>
-                <td class="records__cell">${data.playsCount}</td>
+                <td class="records__cell js-plays-count-td">${data.playsCount}</td>
                  <td class="records__cell records__row-controls">
                      <button type="button" class="records__btn records__btn--increment js-increment-btn"
                         data-game="chess" aria-label="Increment plays count">
