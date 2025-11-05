@@ -27,7 +27,7 @@ export function updateData(targetId, newData) {
     const data = getAllData();
     const list = Array.isArray(data) ? data : [];
     const updatedData = list.map(item =>
-        item.id === targetId ? { ...newData, id: targetId, gameName: item.gameName } : item
+        item.id === targetId ? { ...newData } : item
     );
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedData));
     return updatedData;
