@@ -30,7 +30,7 @@ export function addGameSubmitHandler(addGameDialogEl) {
         }
 
         try {
-            const updatedData = addData(gameData);
+            addData(gameData);
             window.location.reload();
         } catch (error) {
             console.error(error);
