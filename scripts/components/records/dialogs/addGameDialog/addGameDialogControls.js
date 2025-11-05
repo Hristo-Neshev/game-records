@@ -31,8 +31,7 @@ export function addGameSubmitHandler(addGameDialogEl) {
 
         try {
             const updatedData = addData(gameData);
-            renderRecords(updatedData);
-            closeAddGameDialog(addGameDialogEl);
+            window.location.reload();
         } catch (error) {
             console.error(error);
         }

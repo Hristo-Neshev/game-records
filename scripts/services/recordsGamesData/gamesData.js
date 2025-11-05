@@ -33,13 +33,13 @@ export function addData(newGameData) {
 //     return updatedData;
 // }
 
-// export function deleteData(targetId) {
-//     const data = getAllData();
-//     const list = Array.isArray(data) ? data : [];
-//     const updatedData = list.filter(item => item.id !== targetId);
-//     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedData));
-//     return updatedData;
-// }
+export function deleteSingleGameData(targetId) {
+    const data = getAllData();
+    const list = Array.isArray(data) ? data : [];
+    const updatedData = list.filter(item => item.id !== targetId);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedData));
+    return updatedData;
+}
 
 export function clearAllData() {
     localStorage.removeItem(LOCAL_STORAGE_KEY);
