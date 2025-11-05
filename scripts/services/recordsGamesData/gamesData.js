@@ -17,21 +17,21 @@ export function addData(newGameData) {
     return updatedData;
 }
 
-// export function getData(targetId) {
-//     const data = getAllData();
-//     const singleGameData = data.find((gameData) => gameData.id === targetId ? gameData : []);
-//     return singleGameData;
-// }
+export function getData(targetId) {
+    const data = getAllData();
+    const singleGameData = data.filter((gameData) => gameData.id === targetId);
+    return singleGameData;
+}
 
-// export function updateData(targetId, playsCount) {
-//     const data = getAllData();
-//     const list = Array.isArray(data) ? data : [];
-//     const updatedData = list.map(item =>
-//         item.id === targetId ? { ...item, playsCount } : item
-//     );
-//     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedData));
-//     return updatedData;
-// }
+export function updateData(targetId, newData) {
+    const data = getAllData();
+    const list = Array.isArray(data) ? data : [];
+    const updatedData = list.map(item =>
+        item.id === targetId ? { ...newData, id: targetId, gameName: item.gameName } : item
+    );
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedData));
+    return updatedData;
+}
 
 export function deleteSingleGameData(targetId) {
     const data = getAllData();
