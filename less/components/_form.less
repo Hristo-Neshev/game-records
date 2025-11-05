@@ -7,6 +7,12 @@
         font-family: @font-open-sans--semi-bold;
         font-size: 24px;
         text-align: center;
+
+        &--edit {
+            span {
+                color: @color-blue;
+            }
+        }
     }
 
     &__single-input-container {
@@ -48,7 +54,8 @@
         align-items: center;
         gap: 10px;
 
-        &--delete-dialog {
+        &--delete-dialog,
+        &--edit-dialog {
             flex-direction: row;
         }
     }
@@ -80,6 +87,24 @@
 
         &:hover {
             background-color: darken(@color-red, 8%);
+        }
+    }
+
+    &--cancel-edit {
+        background-color: @color-red;
+        font-size: 14px;
+
+        &:hover {
+            background-color: darken(@color-red, 8%);
+        }
+    }
+
+    &--edit {
+        background-color: @color-blue;
+        font-size: 14px;
+
+        &:hover {
+            background-color: darken(@color-blue, 8%);
         }
     }
 

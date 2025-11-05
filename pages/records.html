@@ -147,6 +147,30 @@
         </div>
     </dialog>
 
+    <!-- Edit Data Dialog -->
+    <dialog class="dialog js-edit-data-dialog" data-type="edit-data" data-edit-data-id="">
+        <div class="dialog__inner-container">
+
+            <form class="form js-edit-game-form">
+                <h3 class="form__title form__title--edit">Edit <span class="js-edit-dialog-title-span"></span></h3>
+                <div class="form__single-input-container js-single-input-container">
+                    <input id="gameNameInput" type="text" class="form__input js-edit-game-name-input"
+                        placeholder="Game Name">
+                    <p class="form__validation-msg">The name must be at least 2 characters long and unique!</p>
+                </div>
+                <div class="form__single-input-container js-single-input-container">
+                    <input id="playesCountInput" type="number" class="form__input js-edit-plays-input"
+                        placeholder="Initial Plays">
+                    <p class="form__validation-msg"> Initial plays must be bigger than 0</p>
+                </div>
+            </form>
+            <div class="form__buttons-container form__buttons-container--edit-dialog">
+                <button class="form-button form-button--edit js-edit-data-dialog-btn">Edit</button>
+                <button class="form-button form-button--cancel-edit js-cancel-edit-data-dialog-btn">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+
 
     <!-- Mobile Menu -->
     <section class="mobile-menu js-mobile-menu">
