@@ -6,6 +6,10 @@ export default function renderRecords(recordsData) {
 
     if (recordsData.length === 0) {
         const notFoundTitleEl = elCreator("notFoundMessage", []);
+        const notFoundMsgEl = document.querySelector(".js-records-not-found");
+        if (notFoundMsgEl) {
+            return;
+        }
         appendElement(notFoundTitleEl, recordsInnerContainerEl);
     } else {
         const notFoundMsgEl = document.querySelector(".js-records-not-found");
