@@ -17,7 +17,7 @@ function incrementBtnHandler(event) {
     const playsCountTdEl = rowEl.querySelector(".js-plays-count-td");
     const gameId = rowEl.id;
     const oldData = getData(gameId)[0];
-    const updatedData = { ...oldData, playsCount: oldData.playsCount + 1 };
+    const updatedData = { ...oldData, playsCount: Number(oldData.playsCount) + 1 };
     const newData = updateData(gameId, updatedData);
     playsCountTdEl.textContent = updatedData.playsCount;
 }
