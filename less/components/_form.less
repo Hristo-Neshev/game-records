@@ -1,0 +1,128 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &__title {
+        font-family: @font-open-sans--semi-bold;
+        font-size: 24px;
+        text-align: center;
+
+        &--edit {
+            span {
+                color: @color-blue;
+            }
+        }
+    }
+
+    &__single-input-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    &__single-input-container.invalid &__input {
+        border: 1px solid @color-red;
+    }
+
+    &__single-input-container.invalid &__validation-msg {
+        opacity: 1;
+    }
+
+    &__input {
+        padding: 10px 15px;
+        font-family: @font-open-sans--regular;
+        border: 1px solid rgba(@color-text-primary, 0.3);
+        border-radius: 10px;
+        outline-color: rgba(@color-text-primary, 0.3);
+        transition: border .3s ease;
+    }
+
+    &__validation-msg {
+        font-size: 12px;
+        margin-top: 5px;
+        color: @color-red;
+        opacity: 0;
+        transition: opacity .3s ease;
+    }
+
+    &__buttons-container {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        &--delete-dialog,
+        &--edit-dialog {
+            flex-direction: row;
+        }
+    }
+}
+
+.form-button {
+    font-family: @font-open-sans--semi-bold;
+    font-size: 16px;
+    display: flex;
+    border: none;
+    outline-color: transparent;
+    color: @color-white;
+
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    &--submit {
+        background-color: @color-green;
+
+        &:hover {
+            background-color: darken(@color-green, 8%);
+        }
+    }
+
+    &--cancel {
+        background-color: @color-red;
+
+        &:hover {
+            background-color: darken(@color-red, 8%);
+        }
+    }
+
+    &--cancel-edit {
+        background-color: @color-red;
+        font-size: 14px;
+
+        &:hover {
+            background-color: darken(@color-red, 8%);
+        }
+    }
+
+    &--edit {
+        background-color: @color-blue;
+        font-size: 14px;
+
+        &:hover {
+            background-color: darken(@color-blue, 8%);
+        }
+    }
+
+    &--cancel-delete {
+        background-color: @color-green;
+        font-size: 14px;
+
+        &:hover {
+            background-color: darken(@color-green, 8%);
+        }
+    }
+
+    &--delete {
+        background-color: @color-red;
+        font-size: 14px;
+
+        &:hover {
+            background-color: darken(@color-red, 8%);
+        }
+    }
+}

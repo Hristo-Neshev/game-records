@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/main.css">
-    <title>Game Records | Home</title>
+    <title>Games Records | Home</title>
 </head>
 
 <body>
@@ -21,12 +21,6 @@
                         <li class="navigation__list-item">
                             <a href="./home.html" class="navigation__link">Home</a>
                         </li>
-                        <li class="navigation__list-item">
-                            <a href="./records.html" class="navigation__link">Game Records</a>
-                        </li>
-                        <li class="navigation__list-item">
-                            <a href="./about.html" class="navigation__link">About</a>
-                        </li>
                     </ul>
                 </nav>
                 <button class="header__mobile-menu-button js-mobile-menu-btn">
@@ -35,7 +29,57 @@
         </header>
 
 
-        <main></main>
+        <main>
+            <!-- Records -->
+            <section class="records js-records-component">
+                <div class="records__inner-container js-records-inner-container content-container">
+
+                    <!-- Heading -->
+                    <div class="records__heading">
+                        <h2 class="records__title">Game Records</h2>
+                        <button class="records__add-button js-add-game-btn" data-type="add">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                <path
+                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Records filters -->
+                    <form class="records__filters-form js-filters-form">
+                        <input type="text" class="records__filters-input js-game-name-input" placeholder="Game Name">
+                        <select name="records sort select" id="records-sort-select"
+                            class="records__filters-select js-sort-filter">
+                            <option value="most-played">Most Played</option>
+                            <option value="least-played">Least Played</option>
+                        </select>
+                        <button class="records__filters-submit-btn js-filter-submit-btn"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg></button>
+                        <button class="records__clear-data-btn js-delete-data-btn" data-type="delete-all">Clear All
+                            Data</button>
+                    </form>
+
+                    <!-- Records Table -->
+                    <table class="records__table">
+                        <thead>
+                            <tr>
+                                <th>Game Name</th>
+                                <th>Plays</th>
+                                <th>Controls</th>
+                            </tr>
+                        </thead>
+                        <tbody class="js-records-table"></tbody>
+                    </table>
+
+                </div>
+            </section>
+        </main>
 
         <!-- Footer -->
         <footer class="footer">
@@ -57,6 +101,66 @@
         </footer>
     </div>
 
+    <!-- Add Game Dialog -->
+    <dialog class="dialog js-add-game-dialog" data-type="add-data">
+        <div class="dialog__inner-container">
+            <form class="form js-add-game-form">
+                <h3 class="form__title">Add Game</h3>
+                <div class="form__single-input-container js-single-input-container">
+                    <input id="gameNameInput" type="text" class="form__input js-add-game-name-input"
+                        placeholder="Game Name">
+                    <p class="form__validation-msg">The name must be at least 2 characters long and unique!</p>
+                </div>
+                <div class="form__single-input-container js-single-input-container">
+                    <input id="playesCountInput" type="number" class="form__input js-initial-plays-input"
+                        placeholder="Initial Plays">
+                    <p class="form__validation-msg"> Initial plays must be bigger than 0</p>
+                </div>
+            </form>
+            <div class="form__buttons-container">
+                <button class="form-button form-button--submit js-add-game-submit-button">Add Game</button>
+                <button class="form-button form-button--cancel js-add-game-cancel-button">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Delete Data Dialog -->
+    <dialog class="dialog js-delete-data-dialog" data-type="delete-data" data-delete-data-id="">
+        <div class="dialog__inner-container">
+            <h3 class="dialog__title dialog__title--delete">You will delete <span
+                    class="js-delete-dialog-title-span"></span> </br>Are
+                you sure?</h3>
+            <div class="form__buttons-container form__buttons-container--delete-dialog">
+                <button class="form-button form-button--delete js-delete-data-dialog-btn">Delete</button>
+                <button class="form-button form-button--cancel-delete js-cancel-delete-data-dialog-btn">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Edit Data Dialog -->
+    <dialog class="dialog js-edit-data-dialog" data-type="edit-data" data-edit-data-id="">
+        <div class="dialog__inner-container">
+
+            <form class="form js-edit-game-form">
+                <h3 class="form__title form__title--edit">Edit <span class="js-edit-dialog-title-span"></span></h3>
+                <div class="form__single-input-container js-single-input-container">
+                    <input id="gameNameInput" type="text" class="form__input js-edit-game-name-input"
+                        placeholder="Game Name">
+                    <p class="form__validation-msg">The name must be at least 2 characters long and unique!</p>
+                </div>
+                <div class="form__single-input-container js-single-input-container">
+                    <input id="playesCountInput" type="number" class="form__input js-edit-plays-input"
+                        placeholder="Initial Plays">
+                    <p class="form__validation-msg"> Initial plays must be bigger than 0</p>
+                </div>
+            </form>
+            <div class="form__buttons-container form__buttons-container--edit-dialog">
+                <button class="form-button form-button--edit js-edit-data-dialog-btn">Edit</button>
+                <button class="form-button form-button--cancel-edit js-cancel-edit-data-dialog-btn">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+
 
     <!-- Mobile Menu -->
     <section class="mobile-menu js-mobile-menu">
@@ -66,18 +170,12 @@
                     <li class="navigation__list-item">
                         <a href="./home.html" class="navigation__link">Home</a>
                     </li>
-                    <li class="navigation__list-item">
-                        <a href="./records.html" class="navigation__link">Game Records</a>
-                    </li>
-                    <li class="navigation__list-item">
-                        <a href="./about.html" class="navigation__link">About</a>
-                    </li>
                 </ul>
             </nav>
         </div>
     </section>
 
-    <script type="module" src="../scripts/main.js"></script>
+    <script type="module" src="../scripts/pages/home-page.js"></script>
 </body>
 
 </html>
