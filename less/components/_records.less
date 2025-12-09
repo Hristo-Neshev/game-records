@@ -56,9 +56,8 @@
         border: 1px solid rgba(@color-text-primary, 0.3);
         border-radius: 10px;
         background-color: @color-white;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
+        color: @color-text-primary;
+
     }
 
     &__filters-submit-btn {
@@ -259,5 +258,23 @@
                 font-size: 12px;
             }
         }
+    }
+}
+
+@media screen and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+    .records {
+        &__filters-select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23666' d='M8 12L3 7h10l-5 5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+
+
+
     }
 }
