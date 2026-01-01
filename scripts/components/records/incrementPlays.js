@@ -1,4 +1,5 @@
 import { getData, updateData } from "../../services/recordsGamesData/gamesData.js";
+import updateTotalCounter from "./updateTotalCounter.js";
 
 export default function initIncrementButtons() {
     const incrementBtnEls = document.querySelectorAll(".js-increment-btn");
@@ -20,4 +21,5 @@ function incrementBtnHandler(event) {
     const updatedData = { ...oldData, playsCount: Number(oldData.playsCount) + 1 };
     const newData = updateData(gameId, updatedData);
     playsCountTdEl.textContent = updatedData.playsCount;
+    updateTotalCounter(null, true);
 }

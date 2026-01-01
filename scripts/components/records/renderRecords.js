@@ -1,4 +1,5 @@
 import { elCreator, appendElement } from "../../services/elCreatorJS/el-creator.js";
+import updateTotalCounter from "./updateTotalCounter.js";
 
 export default function renderRecords(recordsData) {
     const tableBodyEl = document.querySelector(".js-records-table");
@@ -17,10 +18,15 @@ export default function renderRecords(recordsData) {
         if (notFoundMsgEl) {
             notFoundMsgEl.remove();
         }
+
+        let totalPlays = 0;
+
         tableBodyEl.innerHTML = "";
         recordsData.forEach(function (rowData) {
             const rowEl = elCreator("recordsTableRow", rowData);
             appendElement(rowEl, tableBodyEl);
+            totalPlays += Number(rowData.playsCount);
         });
+        updateTotalCounter(totalPlays);
     }
 }

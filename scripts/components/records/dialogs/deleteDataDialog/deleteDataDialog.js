@@ -15,12 +15,12 @@ function deleteData(deleteDialogEl) {
     console.log(deleteDataId);
     if (deleteDataId === "all") {
         clearAllData();
-        window.location.reload();
     } else {
         deleteSingleGameData(deleteDataId);
         removeDataRowElement(deleteDataId);
         toggleDialogElement("close", deleteDialogEl);
     }
+    window.location.reload();
 }
 
 function removeDataRowElement(deleteRowId) {
